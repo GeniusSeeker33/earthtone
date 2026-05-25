@@ -1,6 +1,6 @@
 import Header from "../components/Header.jsx";
-import { featuredSession, moments } from "../data/sessionArchive.js";
-import { PlayCircle, Film, Heart } from "lucide-react";
+import { featuredSession, moments, sessionClips } from "../data/sessionArchive.js";
+import { PlayCircle, Film, Heart, Video } from "lucide-react";
 
 export default function Sessions() {
   return (
@@ -98,6 +98,48 @@ export default function Sessions() {
               </div>
             </div>
           </div>
+
+          {sessionClips.length > 0 && (
+            <div className="mt-16">
+              <div className="flex items-center gap-3 text-[#c9974d]">
+                <Video className="h-6 w-6" />
+                <span className="text-sm uppercase tracking-[0.25em]">
+                  Moments
+                </span>
+              </div>
+
+              <h2 className="mt-3 text-4xl font-black text-[#fff8e8]">
+                Short chapters from the room.
+              </h2>
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {sessionClips.map((clip) => (
+                  <figure
+                    key={clip.src}
+                    className="overflow-hidden rounded-[1.5rem] border border-[#f4ead6]/10 bg-[#201a13]"
+                  >
+                    <video
+                      src={encodeURI(clip.src)}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="block aspect-video w-full bg-black object-cover"
+                    />
+                    <figcaption className="p-5">
+                      <h3 className="text-lg font-black text-[#fff8e8]">
+                        {clip.title}
+                      </h3>
+                      {clip.caption && (
+                        <p className="mt-1 text-sm leading-6 text-[#f4ead6]/70">
+                          {clip.caption}
+                        </p>
+                      )}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-16 rounded-[2rem] border border-[#c9974d]/20 bg-[#221810] p-8 md:p-12">
             <Heart className="mb-5 h-8 w-8 text-[#b8322a]" />

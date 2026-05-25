@@ -1,6 +1,5 @@
 import Header from "../components/Header.jsx";
 import { galleryImages } from "../data/galleryImages.js";
-import { Camera } from "lucide-react";
 
 export default function Gallery() {
   return (
@@ -22,34 +21,20 @@ export default function Gallery() {
             the stillness, and the sound.
           </p>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {galleryImages.map((image, index) => (
-              <article
+          <div className="mt-14 gap-5 [column-fill:_balance] columns-1 sm:columns-2 lg:columns-3 xl:columns-4">
+            {galleryImages.map((image) => (
+              <figure
                 key={image.src}
-                className={`group overflow-hidden rounded-[2rem] border border-[#f4ead6]/10 bg-[#201a13] ${
-                  index % 5 === 0 ? "lg:col-span-2 lg:row-span-2" : ""
-                }`}
+                className="mb-5 break-inside-avoid overflow-hidden rounded-2xl border border-[#f4ead6]/10 bg-[#201a13]"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                  <div className="absolute bottom-0 p-6">
-                    <Camera className="mb-3 h-6 w-6 text-[#c9974d]" />
-                    <h2 className="text-2xl font-black text-[#fff8e8]">
-                      {image.title}
-                    </h2>
-                    <p className="mt-2 text-sm leading-6 text-[#f4ead6]/75">
-                      {image.caption}
-                    </p>
-                  </div>
-                </div>
-              </article>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="block w-full transition duration-700 hover:scale-[1.02]"
+                />
+              </figure>
             ))}
           </div>
         </div>

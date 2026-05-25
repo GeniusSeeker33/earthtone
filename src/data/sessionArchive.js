@@ -21,6 +21,14 @@ export const featuredSession = {
   ],
 };
 
+export const sessionClips = [
+  {
+    src: "/clips/earthtone-eddy-steve-sing.MP4",
+    title: "Late-night vocal takes",
+    caption: "Eddy and Steve, raw around the table.",
+  },
+];
+
 export const moments = [
   "Before the session interviews",
   "Cinematic room openings",

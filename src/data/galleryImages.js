@@ -1,17 +1,82 @@
-export const galleryImages = [
-  {
-    src: "/gallery/session-01.JPEG",
-    title: "Before the session",
-    caption: "The quiet moments before the room comes alive.",
-  },
-  {
-    src: "/gallery/session-02.jpg",
-    title: "The great music room",
-    caption: "Warm light, wood, instruments, and stories.",
-  },
-  {
-    src: "/gallery/session-03.PNG",
-    title: "Live takes",
-    caption: "The human sound between perfection and memory.",
-  },
+const files = [
+  "IMG_5664 - Copy.JPEG",
+  "alanna-session - Copy.JPEG",
+  "alanna-session2 - Copy.JPEG",
+  "alanna-session4 - Copy.JPEG",
+  "alanna-session5 - Copy.JPEG",
+  "alanna-session6 - Copy.JPEG",
+  "alanna-session7 - Copy.JPEG",
+  "delonjay3 - Copy.JPEG",
+  "earthtone-24track-tapemachine - Copy.JPEG",
+  "earthtone-boxwine-listenback - Copy.PNG",
+  "earthtone-boxwine-prophets - Copy.JPEG",
+  "earthtone-boxwine-session - Copy.JPEG",
+  "earthtone-broken-tape - Copy.JPEG",
+  "earthtone-broken-tape2 - Copy.JPEG",
+  "earthtone-chet - Copy.JPEG",
+  "earthtone-crosley - Copy.JPEG",
+  "earthtone-crosley-friends - Copy.JPEG",
+  "earthtone-crosly-friends3 - Copy.JPEG",
+  "earthtone-delonjay - Copy.PNG",
+  "earthtone-delonjay2 - Copy.PNG",
+  "earthtone-earl-des - Copy.PNG",
+  "earthtone-gear - Copy.JPEG",
+  "earthtone-hood - Copy.JPEG",
+  "earthtone-joe - Copy.JPEG",
+  "earthtone-joe3 - Copy.JPEG",
+  "earthtone-kitchen-break - Copy.JPEG",
+  "earthtone-kitchen-break3 - Copy.JPEG",
+  "earthtone-kitchen-break32 - Copy.JPEG",
+  "earthtone-kitchen-break4 - Copy.JPEG",
+  "earthtone-kitchen-session-eddy-steve - Copy.JPEG",
+  "earthtone-kitchen-session-eddy-steve2 - Copy.JPEG",
+  "earthtone-laurel-lewis - Copy.JPEG",
+  "earthtone-mike-chet-owen - Copy.JPEG",
+  "earthtone-mike-chet-owen2 - Copy.JPEG",
+  "earthtone-moondawg-session - Copy.PNG",
+  "earthtone-moondawg-session2 - Copy.PNG",
+  "earthtone-outside-des-chet - Copy.JPEG",
+  "earthtone-outside-earl - Copy.JPEG",
+  "earthtone-outside-earl-des - Copy.JPEG",
+  "earthtone-outside-sessionbreak - Copy.JPEG",
+  "earthtone-outside-winter - Copy.JPEG",
+  "earthtone-outside-winter2 - Copy.JPEG",
+  "earthtone-outside-winter3 - Copy.JPEG",
+  "earthtone-owen - Copy.JPEG",
+  "earthtone-playback - Copy.JPEG",
+  "earthtone-session7 - Copy.JPEG",
+  "earthtone-session9 - Copy.JPEG",
+  "earthtone-sleepy-steve - Copy.PNG",
+  "earthtone-steve - Copy.JPEG",
+  "earthtone-vibes - Copy.JPEG",
+  "earthtone-warren-ray-boxwine - Copy.JPEG",
+  "earthtone-warren-ray-session - Copy.JPEG",
+  "earthtone-warren-ray-session2 - Copy.JPEG",
+  "earthtone-wine - Copy.JPEG",
+  "flier-delonjay - Copy.JPEG",
+  "flier-earlGuthrie - Copy.PNG",
+  "kendra-session.jpg",
+  "kendra-session7 - Copy.JPEG",
+  "proles-breakfast - Copy.JPEG",
+  "proles-breakfast2 - Copy.JPEG",
+  "proles-playback - Copy.JPEG",
+  "proles-playback2 - Copy.JPEG",
+  "proles-playback3 - Copy.JPEG",
+  "session-01.JPEG",
+  "session-02.jpg",
+  "session-03.PNG",
 ];
+
+const toAlt = (filename) =>
+  filename
+    .replace(/\.[^.]+$/, "")
+    .replace(/\s*-\s*Copy$/i, "")
+    .replace(/^earthtone-/, "")
+    .replace(/[-_]/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .trim();
+
+export const galleryImages = files.map((file) => ({
+  src: `/gallery/${encodeURI(file)}`,
+  alt: toAlt(file),
+}));
