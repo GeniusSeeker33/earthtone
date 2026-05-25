@@ -53,6 +53,24 @@ export const sessionClips = [
     title: "An orb passes through the room",
     caption: "A short, quiet moment in the music space.",
   },
+  {
+    youtubeId: "i7Ycjv-YNpU",
+    si: "3K2Y9b7wLpaDtEG_",
+    title: "Brian Marks at the piano",
+    caption: "A quiet improvisation after a late-night session.",
+  },
+  {
+    youtubeId: "maD-UyEJ8HQ",
+    si: "EjHs1DG7yruuv_Fb",
+    title: "Steve — Little Wing solo",
+    caption: "A late-night practice room moment.",
+  },
+  {
+    youtubeId: "jPwpMUGGHc0",
+    si: "_w9070GE-OJ_zQq4",
+    title: "Tradin’ guitar licks — Whiskey Legs",
+    caption: "Picking around the room after hours.",
+  },
 ];
 
 export const moments = [

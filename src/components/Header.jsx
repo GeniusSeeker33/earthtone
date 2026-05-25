@@ -22,6 +22,7 @@ export default function Header() {
         <div className="flex flex-wrap justify-end gap-4 text-sm text-[#f4ead6]/75">
           <Link to="/studio" className="hover:text-[#c9974d]">Studio</Link>
           <Link to="/sessions" className="hover:text-[#c9974d]">Sessions</Link>
+          <Link to="/showcases" className="hover:text-[#c9974d]">Showcases</Link>
           <Link to="/experiences" className="hover:text-[#c9974d]">Experiences</Link>
           <Link to="/gallery" className="hover:text-[#c9974d]">Gallery</Link>
           <Link to="/about" className="hover:text-[#c9974d]">About</Link>
