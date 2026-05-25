@@ -1,4 +1,5 @@
 import Header from "../components/Header.jsx";
+import HeroBackground from "../components/HeroBackground.jsx";
 import { experiences } from "../data/siteContent.js";
 import { ArrowRight, Sparkles } from "lucide-react";
 
@@ -7,8 +8,9 @@ export default function Experiences() {
     <main className="min-h-screen bg-[#11100d] text-[#f4ead6]">
       <Header />
 
-      <section className="px-6 py-24 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20">
+        <HeroBackground src="/gallery/earthtone-session9%20-%20Copy.JPEG" />
+        <div className="relative z-10 mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#c9974d]">
             Experiences
           </p>

@@ -1,4 +1,5 @@
 import Header from "../components/Header.jsx";
+import HeroBackground from "../components/HeroBackground.jsx";
 import { ArrowRight, CalendarDays } from "lucide-react";
 
 export default function Booking() {
@@ -6,8 +7,9 @@ export default function Booking() {
     <main className="min-h-screen bg-[#11100d] text-[#f4ead6]">
       <Header />
 
-      <section className="px-6 py-24 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-5xl rounded-[2.5rem] border border-[#c9974d]/30 bg-[#221810] p-8 shadow-2xl md:p-14">
+      <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20">
+        <HeroBackground src="/gallery/earthtone-outside-winter%20-%20Copy.JPEG" />
+        <div className="relative z-10 mx-auto max-w-5xl rounded-[2.5rem] border border-[#c9974d]/30 bg-[#221810]/70 p-8 shadow-2xl backdrop-blur-md md:p-14">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#c9974d]">
             Now Booking
           </p>

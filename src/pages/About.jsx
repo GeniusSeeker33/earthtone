@@ -1,4 +1,5 @@
 import Header from "../components/Header.jsx";
+import HeroBackground from "../components/HeroBackground.jsx";
 import { Heart, Music, Home } from "lucide-react";
 
 export default function About() {
@@ -6,8 +7,9 @@ export default function About() {
     <main className="min-h-screen bg-[#11100d] text-[#f4ead6]">
       <Header />
 
-      <section className="px-6 py-24 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-5xl">
+      <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20">
+        <HeroBackground src="/gallery/earthtone-mike-chet-owen%20-%20Copy.JPEG" />
+        <div className="relative z-10 mx-auto max-w-5xl">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#c9974d]">
             About Earthtone
           </p>

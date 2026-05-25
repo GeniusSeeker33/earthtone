@@ -1,4 +1,5 @@
 import Header from "../components/Header.jsx";
+import HeroBackground from "../components/HeroBackground.jsx";
 import { Mic2, Headphones, Camera } from "lucide-react";
 
 export default function Studio() {
@@ -12,8 +13,9 @@ export default function Studio() {
     <main className="min-h-screen bg-[#11100d] text-[#f4ead6]">
       <Header />
 
-      <section className="px-6 py-24 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20">
+        <HeroBackground src="/gallery/earthtone-vibes%20-%20Copy.JPEG" />
+        <div className="relative z-10 mx-auto max-w-6xl">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#c9974d]">
             The Studio
           </p>

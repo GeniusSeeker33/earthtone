@@ -21,11 +21,37 @@ export const featuredSession = {
   ],
 };
 
+export const additionalSessions = [
+  {
+    title: "Mama Sutra’s House of Soul, E01 — Proles Live",
+    youtubeId: "r-P-x8yOHnI",
+    si: "Q6RByRRIMk1ZbJw6",
+    livestreamDate: "June 5, 2020",
+  },
+  {
+    title: "Mama Sutra’s House of Soul, E02 — Jameron, Full Buck Moon",
+    youtubeId: "A_dsgHb0GbI",
+    si: "Z7GqhOP5YtNDD9Va",
+    livestreamDate: "July 5, 2020",
+  },
+  {
+    title: "Music Tech Connect — A view from the Practice Room",
+    youtubeId: "rCo-zopRDL8",
+    si: "HqAm5hiEuPUbCG9g",
+  },
+];
+
 export const sessionClips = [
   {
     src: "/clips/earthtone-eddy-steve-sing.MP4",
     title: "Late-night vocal takes",
     caption: "Eddy and Steve, raw around the table.",
+  },
+  {
+    youtubeId: "Ch8o-SlP8yc",
+    si: "B4-f3wk8ypgBgNus",
+    title: "An orb passes through the room",
+    caption: "A short, quiet moment in the music space.",
   },
 ];
 

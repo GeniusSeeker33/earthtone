@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles, Waves } from "lucide-react";
 import Header from "../components/Header.jsx";
+import HeroBackground from "../components/HeroBackground.jsx";
 
 export default function Home() {
   return (
@@ -8,8 +9,7 @@ export default function Home() {
       <Header />
 
       <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20">
-        <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#9b6a2f] blur-3xl opacity-40" />
-        <div className="absolute top-1/3 -right-32 h-[32rem] w-[32rem] rounded-full bg-[#b8322a] blur-3xl opacity-30" />
+        <HeroBackground src="/gallery/earthtone-24track-tapemachine%20-%20Copy.JPEG" />
 
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
           <motion.div
@@ -49,8 +49,8 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="rounded-[2rem] border border-[#c9974d]/30 bg-[#1b1712]/80 p-6 shadow-2xl">
-            <div className="aspect-[4/5] rounded-[1.5rem] bg-[radial-gradient(circle_at_top_left,#6e4b25,#17130f_45%,#090807)] p-8">
+          <div className="rounded-[2rem] border border-[#c9974d]/30 bg-[#1b1712]/30 p-6 shadow-2xl backdrop-blur-md">
+            <div className="aspect-[4/5] rounded-[1.5rem] bg-gradient-to-br from-[#6e4b25]/30 via-[#17130f]/40 to-[#090807]/60 p-8 backdrop-blur-sm">
               <Waves className="mb-8 h-14 w-14 text-[#c9974d]" />
               <p className="text-sm uppercase tracking-[0.35em] text-[#e6c17a]">
                 Analog warmth

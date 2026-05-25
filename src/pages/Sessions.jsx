@@ -1,5 +1,11 @@
 import Header from "../components/Header.jsx";
-import { featuredSession, moments, sessionClips } from "../data/sessionArchive.js";
+import HeroBackground from "../components/HeroBackground.jsx";
+import {
+  featuredSession,
+  moments,
+  sessionClips,
+  additionalSessions,
+} from "../data/sessionArchive.js";
 import { PlayCircle, Film, Heart, Video } from "lucide-react";
 
 export default function Sessions() {
@@ -7,8 +13,9 @@ export default function Sessions() {
     <main className="min-h-screen bg-[#11100d] text-[#f4ead6]">
       <Header />
 
-      <section className="px-6 py-20 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden px-6 py-20 md:px-12 lg:px-20">
+        <HeroBackground src="/gallery/earthtone-session7%20-%20Copy.JPEG" />
+        <div className="relative z-10 mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#c9974d]">
             Session Archive
           </p>
@@ -99,6 +106,59 @@ export default function Sessions() {
             </div>
           </div>
 
+          {additionalSessions.length > 0 && (
+            <div className="mt-16">
+              <div className="flex items-center gap-3 text-[#c9974d]">
+                <PlayCircle className="h-6 w-6" />
+                <span className="text-sm uppercase tracking-[0.25em]">
+                  More Sessions
+                </span>
+              </div>
+
+              <h2 className="mt-3 text-4xl font-black text-[#fff8e8]">
+                Other livestreams from the room.
+              </h2>
+
+              <div className="mt-8 grid gap-6 lg:grid-cols-2">
+                {additionalSessions.map((session) => (
+                  <article
+                    key={session.youtubeId}
+                    className="overflow-hidden rounded-[1.5rem] border border-[#f4ead6]/10 bg-[#201a13]"
+                  >
+                    <div className="aspect-video">
+                      <iframe
+                        className="h-full w-full"
+                        src={`https://www.youtube.com/embed/${session.youtubeId}?${new URLSearchParams(
+                          {
+                            ...(session.si ? { si: session.si } : {}),
+                            ...(session.startSeconds
+                              ? { start: String(session.startSeconds) }
+                              : {}),
+                          }
+                        ).toString()}`}
+                        title={session.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-lg font-black text-[#fff8e8]">
+                        {session.title}
+                      </h3>
+                      {session.livestreamDate && (
+                        <p className="mt-2 text-xs uppercase tracking-[0.3em] text-[#c9974d]/80">
+                          Livestreamed {session.livestreamDate}
+                        </p>
+                      )}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
           {sessionClips.length > 0 && (
             <div className="mt-16">
               <div className="flex items-center gap-3 text-[#c9974d]">
@@ -115,16 +175,37 @@ export default function Sessions() {
               <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {sessionClips.map((clip) => (
                   <figure
-                    key={clip.src}
+                    key={clip.src ?? clip.youtubeId}
                     className="overflow-hidden rounded-[1.5rem] border border-[#f4ead6]/10 bg-[#201a13]"
                   >
-                    <video
-                      src={encodeURI(clip.src)}
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="block aspect-video w-full bg-black object-cover"
-                    />
+                    <div className="aspect-video bg-black">
+                      {clip.youtubeId ? (
+                        <iframe
+                          className="h-full w-full"
+                          src={`https://www.youtube.com/embed/${clip.youtubeId}?${new URLSearchParams(
+                            {
+                              ...(clip.si ? { si: clip.si } : {}),
+                              ...(clip.startSeconds
+                                ? { start: String(clip.startSeconds) }
+                                : {}),
+                            }
+                          ).toString()}`}
+                          title={clip.title}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <video
+                          src={encodeURI(clip.src)}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          className="block h-full w-full object-cover"
+                        />
+                      )}
+                    </div>
                     <figcaption className="p-5">
                       <h3 className="text-lg font-black text-[#fff8e8]">
                         {clip.title}
