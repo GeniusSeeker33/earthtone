@@ -65,6 +65,9 @@ const files = [
   "session-01.JPEG",
   "session-02.jpg",
   "session-03.PNG",
+  "Earthtone Analog (73 of 107).jpg",
+  "earthtone-home-winter2.JPEG",
+  "earthtone_satellight.png",
 ];
 
 const toAlt = (filename) =>

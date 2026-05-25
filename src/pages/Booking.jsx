@@ -19,13 +19,42 @@ export default function Booking() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[#f4ead6]/75">
-            Request a session, studio tour, private recording experience, or
-            creative retreat at Earthtone Analog.
+            Bands can book hourly sessions, single days, or overnight stays.
+            The entire studio is available for overnight bookings by the day,
+            the week, or the month — bring the project, sleep on the songs,
+            and wake up where you left off.
           </p>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-2xl border border-[#f4ead6]/10 bg-black/20 px-5 py-4">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#c9974d]">
+                Hourly
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#f4ead6]/80">
+                Tracking sessions, single songs, demos, voiceovers.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[#f4ead6]/10 bg-black/20 px-5 py-4">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#c9974d]">
+                Day sessions
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#f4ead6]/80">
+                Full-band days, live takes, content capture.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[#f4ead6]/10 bg-black/20 px-5 py-4">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#c9974d]">
+                Overnight
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#f4ead6]/80">
+                The whole studio, by the day, week, or month.
+              </p>
+            </div>
+          </div>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="mailto:hello@earthtoneanalog.com"
+              href="mailto:info@earthtoneanalog.com"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-[#c9974d] px-7 py-4 font-black text-[#11100d] hover:bg-[#e0ad5d]"
             >
               Email the studio <ArrowRight className="h-5 w-5" />

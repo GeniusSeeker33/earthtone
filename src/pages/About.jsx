@@ -8,7 +8,7 @@ export default function About() {
       <Header />
 
       <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20">
-        <HeroBackground src="/gallery/earthtone-mike-chet-owen%20-%20Copy.JPEG" />
+        <HeroBackground src="/gallery/earthtone-home-winter2.JPEG" />
         <div className="relative z-10 mx-auto max-w-5xl">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#c9974d]">
             About Earthtone
