@@ -24,6 +24,7 @@ export default function Header() {
           <Link to="/sessions" className="hover:text-[#c9974d]">Sessions</Link>
           <Link to="/showcases" className="hover:text-[#c9974d]">Showcases</Link>
           <Link to="/experiences" className="hover:text-[#c9974d]">Experiences</Link>
+          <Link to="/corporate" className="hover:text-[#c9974d]">Corporate</Link>
           <Link to="/gallery" className="hover:text-[#c9974d]">Gallery</Link>
           <Link to="/about" className="hover:text-[#c9974d]">About</Link>
           <Link to="/book" className="hover:text-[#c9974d]">Book</Link>
